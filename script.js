@@ -2,8 +2,8 @@
 let player1Name="",player2Name="",currentPlayer=0 ,isWinner=false
 function onSubmit() {
   console.log("hi")
-  let name1 = document.getElementById("player-1").value;
-  let name2 = document.getElementById("player-2").value;
+  let name1 = document.getElementById("player1").value;
+  let name2 = document.getElementById("player2").value;
   console.log("hi", name1, name2);
   player1Name = name1;
   player2Name = name2;
