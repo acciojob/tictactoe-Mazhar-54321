@@ -53,8 +53,8 @@ function clickHandler(id) {
     }
     var xCount = 0, oCount = 0;
     for(let i=1;i<4;i++){
-       xCount += obj[i]=== "X" ? 1 : 0;
-       oCount += obj[i]=== "O" ? 1 : 0;
+       xCount += obj[i]=== "x" ? 1 : 0;
+       oCount += obj[i]=== "o" ? 1 : 0;
     }
     if (xCount === 3) {
       document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
