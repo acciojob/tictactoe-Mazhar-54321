@@ -1,56 +1,23 @@
 //your JS code here. If required.
 let player1Name="",player2Name="",currentPlayer=0 ,isWinner=false
 function onSubmit() {
-  console.log("hi")
-  let name1 = document.getElementById("player1").value;
-  let name2 = document.getElementById("player2").value;
-  console.log("hi", name1, name2);
+  let name1 = document.getElementById("player-1").value;
+  let name2 = document.getElementById("player-2").value;
   player1Name = name1;
   player2Name = name2;
   if (name1.length && name2.length) {
     let divContainer = document.getElementsByClassName("container")[0];
     console.log(divContainer);
-    divContainer.removeChild(document.getElementById("initialContainer"));
-
-    let table = document.createElement("table");
-    //table
-    //table.style.border="1px solid black";
-    table.style.width = "300px";
-    table.style.height = "300px";
-    table.border = "1";
-    table.style.borderCollapse = "collapse"
-    const data = [["", "", ""], ["", "", ""], ["", "", ""]];
-    let c = 1;
-    data.forEach((el, index1) => {
-      const tr = document.createElement("tr");
-      // tr.style.border="1px solid black";
-      tr.border = "2";
-      el.forEach((el1, index) => {
-        const td = document.createElement("td");
-        td.innerText = el1;
-        td.border = "2";
-        td.id = c;
-        td.style.cursor = "pointer";
-        td.style.height = "100px";
-        td.style.width = "100px";
-        td.style.background = "pink"
-        c++
-        // tr.style.border="1px solid black";
-        //document.addEventListener
-        td.addEventListener("click", () => {
-          clickHandler(td.id);
-        })
-        tr.appendChild(td);
-      })
-      table.appendChild(tr)
-    })
-    const div = document.createElement("div");
-    div.className = "message";
+    divContainer.removeChild(document.getElementById("player-1"));
+    divContainer.removeChild(document.getElementById("player-2"));
+    divContainer.removeChild(document.getElementById("submit"));
+    
+    const div = document.getElementsByClassName("message")[0];
     div.innerText = `${player1Name}, you're up`;
-    div.style.fontWeight = "bold";
-    div.style.margin = "5px"
-    divContainer.appendChild(div)
-    divContainer.appendChild(table)
+	const  board =  document.getElementsByClassName("board")[0];
+	  board.style.display="flex"
+	
+    
   }
 }
 function clickHandler(id) {

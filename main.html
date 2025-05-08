@@ -13,17 +13,22 @@
 
 </body>
 	<div class="container">
+		<input type="text" id="player-1" placeholder="Player 1  Name"/>
+		<input type="text" id="player-2" placeholder="Player 2  Name"/>
+		<button id="submit" onClick="onSubmit()">Start Game</button>
 		<h1>Tic Tac Toe</h1>
-		<div id="initialContainer">
-			<label for="player-1">Player1</label><input type="text" id="player1" />
-		<br />
-		<br/>
-<label for="player-2">Player2</label><input type="text" id="player2" />
-		<br/>
-		<br />
-<input type="submit" id="submit" value="Start Game" onClick="onSubmit()" />
-		</div>
-		
+		<div class="message"> </div>
+		<div class="board">
+        <div id="1" onClick="clickHandler(1)" class="cell"></div>
+        <div id="2" onClick="clickHandler(2)" class="cell"></div>
+        <div id="3" onClick="clickHandler(3)" class="cell"></div>
+        <div id="4" onClick="clickHandler(4)" class="cell"></div>
+        <div id="5" onClick="clickHandler(5)" class="cell"></div>
+        <div id="6" onClick="clickHandler(6)" class="cell"></div>
+        <div id="7" onClick="clickHandler(7)" class="cell"></div>
+        <div id="8" onClick="clickHandler(8)" class="cell"></div>
+        <div id="9" onClick="clickHandler(1)" class="cell"></div>
+    </div>
 	</div>
 
 </html>
