@@ -25,9 +25,9 @@ function clickHandler(id) {
   let innerText = td.innerText;
   if (innerText === "" && !isWinner) {
     if (currentPlayer) {
-      td.innerText = 'O'
+      td.innerText = 'o'
     } else {
-      td.innerText = 'X'
+      td.innerText = 'x'
     }
     // let cell0 = document.getElementById("0").innerText
     let cell1 = document.getElementById("1").innerText
