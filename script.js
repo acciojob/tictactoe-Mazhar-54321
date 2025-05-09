@@ -1,17 +1,23 @@
 let player1Name = "", player2Name = "", currentPlayer = 0, isWinner = false
 function onSubmit() {
-  let name1 = document.getElementById("player-1").value;
-  let name2 = document.getElementById("player-2").value;
+  let name1 = document.getElementById("player1").value;
+  let name2 = document.getElementById("player2").value;
+  player1Name="";player2Name="";currentPlayer=0;isWinner=false;
   player1Name = name1;
   player2Name = name2;
   if (name1.length && name2.length) {
     let divContainer = document.getElementsByClassName("container")[0];
     console.log(divContainer);
-    document.getElementById("player-1").style.visibility="hidden";
-    document.getElementById("player-2").style.visibility="hidden";
-    document.getElementById("submit").style.visibility="hidden";
-
-    const div = document.getElementsByClassName("message")[0];
+    document.getElementById("1").textContent=""
+    document.getElementById("2").textContent=""
+    document.getElementById("3").textContent=""
+    document.getElementById("4").textContent=""
+    document.getElementById("5").textContent=""
+    document.getElementById("6").textContent=""
+    document.getElementById("7").textContent=""
+    document.getElementById("8").textContent=""
+    document.getElementById("9").textContent=""
+    const div = document.getElementsByClassName("message")[0]; 
     div.innerText = `${player1Name}, you're up`;
     const board = document.getElementsByClassName("board")[0];
     board.style.display = "flex"
@@ -50,19 +56,20 @@ function clickHandler(id) {
       8: cell8,
       9: cell9
     }
+    //Player1 congratulations you won!
     var xCount = 0, oCount = 0;
     for (let i = 1; i < 4; i++) {
       xCount += obj[i] === "x" ? 1 : 0;
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([0, 1, 2])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([0, 1, 2])
       isWinner = true;
       return;
@@ -73,13 +80,13 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([3, 4, 5])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([3, 4, 5])
       isWinner = true;
       return;
@@ -90,14 +97,14 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
 
 
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([6, 7, 8])
       isWinner = true;
       return;
@@ -110,13 +117,13 @@ function clickHandler(id) {
     }
     console.log(xCount, oCount);
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([0, 3, 6])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([0, 3, 6])
       isWinner = true;
       return;
@@ -127,13 +134,13 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([1, 4, 7])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([1, 4, 7])
       isWinner = true;
       return;
@@ -144,13 +151,13 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([2, 5, 8])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([2, 5, 8])
       isWinner = true;
       return;
@@ -161,13 +168,13 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([0, 4, 8])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([0, 4, 8])
       isWinner = true;
       return;
@@ -178,19 +185,19 @@ function clickHandler(id) {
       oCount += obj[i] === "o" ? 1 : 0;
     }
     if (xCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player1Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player1Name} congratulations you won!`;
       givebackgroundColor([2, 4, 6])
       isWinner = true;
       return;
     }
     if (oCount === 3) {
-      document.getElementsByClassName("message")[0].innerText = `${player2Name}, congratulations you won!`;
+      document.getElementsByClassName("message")[0].innerText = `${player2Name} congratulations you won!`;
       givebackgroundColor([2, 4, 6])
       isWinner = true;
       return;
     }
 
-    document.getElementsByClassName("message")[0].innerText = currentPlayer ? `${player1Name},you're up` : `${player2Name},you're up`
+    document.getElementsByClassName("message")[0].innerText = currentPlayer ? `${player1Name}, you're up` : `${player2Name}, you're up`
     currentPlayer = 1 - currentPlayer;
   }
 }
